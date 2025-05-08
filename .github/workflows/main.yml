@@ -1,0 +1,17 @@
+on: push
+name: Deploy website on push
+jobs:
+  web-deploy:
+    name: Deploy
+    runs-on: ubuntu-letest
+    steps:
+    -name: Get latest code
+    uses: actions/checkout@v3
+
+    -name: Sync files
+    uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+    with:
+      server:
+      username: ${{   }}
+      password: ${{   }}
+      protocol: ftps
