@@ -13,8 +13,8 @@ jobs:
         fetch-depth: 2
     - name: FTP-Deploy-Action
       uses: SamKirkland/FTP-Deploy-Action@3.1.1
-      server: ftpupload.net
-      username: if0_38925180
-      password: ${{ secrets.FTPPASSWORD }}
+      ftp-server: ftpupload.net
+      ftp-username: if0_38925180
+      ftp-password: AdityA07112002
     
       
