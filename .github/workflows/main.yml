@@ -16,5 +16,5 @@ jobs:
       ftp-server: ftp.infinityfree.com
       ftp-username: if0_38925180
       ftp-password: AdityA07112002
-    
+      ftp-port: 21
       
