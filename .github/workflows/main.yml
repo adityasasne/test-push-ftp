@@ -1,20 +1,24 @@
 name: Deploy website on push
-on: 
+
+on:
   push:
-    branches:   
+    branches:
       - main
+
 jobs:
   FTP-Deploy-Action:
     name: FTP-Deploy-Action
-    runs-on: ubuntu-letest
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2.1.0  
-      with:
-        fetch-depth: 2
-    - name: FTP-Deploy-Action
-      uses: SamKirkland/FTP-Deploy-Action@3.1.1
-      ftp-server: ftp.infinityfree.com
-      ftp-username: if0_38925180
-      ftp-password: AdityA07112002
-      ftp-port: 21
+      - uses: actions/checkout@v2.1.0
+        with:
+          fetch-depth: 2
+
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@3.1.1
+        with:
+          ftp-server: ftp.infinityfree.com
+          ftp-username: ${{ secrets.FTPUSERNAME }}
+          ftp-password: ${{ secrets.FTPPASSWORD }}
+
       
