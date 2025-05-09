@@ -1,18 +1,20 @@
-on: push
 name: Deploy website on push
+on: 
+  push:
+    branches:   
+      - main
 jobs:
-  web-deploy:
-    name: Deploy
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action
     runs-on: ubuntu-letest
     steps:
-    -name: Get latest code
-    uses: actions/checkout@v3
-
-    -name: Sync files
-    uses: SamKirkland/FTP-Deploy-Action@4.0.0 
-    with:
+    - uses: actions/checkout@v2.1.0  
+      with:
+        fetch-depth: 2
+    - name: FTP-Deploy-Action
+      uses: SamKirkland/FTP-Deploy-Action@3.1.1
       server: ftpupload.net
       username: if0_38925180@ftpupload.net
       password: ${{ secrets.FTPPASSWORD }}
-      protocol: ftps
+    
       
