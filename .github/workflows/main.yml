@@ -16,7 +16,7 @@ jobs:
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4
         with:
-          ftp-server: ftp.infinityfree.com
+          ftp-server: ftpupload.net
           ftp-username: ${{ secrets.FTPUSERNAME }}
           ftp-password: ${{ secrets.FTPPASSWORD }}
           protocol: ftp
