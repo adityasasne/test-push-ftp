@@ -20,5 +20,5 @@ jobs:
           ftp-server: ftp.infinityfree.com
           ftp-username: ${{ secrets.FTPUSERNAME }}
           ftp-password: ${{ secrets.FTPPASSWORD }}
-
+           server-dir: /htdocs/
       
